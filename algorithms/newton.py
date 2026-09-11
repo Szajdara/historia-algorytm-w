@@ -1,4 +1,4 @@
-# Metoda Newtona-Raphsona - wyznaczanie pierwiastka kwadratowego
+# Metoda Newtona-Raphsona
 def newton_sqrt(n, iterations=10):
     x = float(n)
     for i in range(iterations):

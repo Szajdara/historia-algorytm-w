@@ -1,4 +1,4 @@
-# Algorytm Dijkstry - najkrótsza ścieżka w grafie
+# Algorytm Dijkstry
 graf = {
     'A': {'B': 4, 'C': 2},
     'B': {'A': 4, 'C': 1, 'D': 5},

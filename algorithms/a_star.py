@@ -1,4 +1,4 @@
-# Algorytm A* - przeszukiwanie siatki z heurystyką Manhattan
+# Algorytm A*
 def manhattan(a, b):
     return abs(a[0] - b[0]) + abs(a[1] - b[1])
 

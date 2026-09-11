@@ -1,4 +1,4 @@
-# Sortowanie przez scalanie (Merge Sort)
+#Merge Sort
 def merge_sort(arr):
     if len(arr) <= 1:
         return arr

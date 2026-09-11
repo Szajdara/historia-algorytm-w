@@ -1,4 +1,4 @@
-# Wyszukiwanie wzorca w tekście (Algorytm Boyera-Moorea)
+#Boyera-Moorea
 def szukaj_wzorca(tekst, wzorzec):
     n = len(tekst)
     m = len(wzorzec)

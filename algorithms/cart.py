@@ -1,4 +1,4 @@
-# Algorytm CART (Drzewo decyzyjne)
+# Algorytm CART Drzewo decyzyjne
 def decyzja_cart(wiek, dochod):
     if wiek < 30:
         return "Grupa A: Młody użytkownik"
