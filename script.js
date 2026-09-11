@@ -1,4 +1,4 @@
-// --- 1. Animacje przewijania ---
+
 document.addEventListener("DOMContentLoaded", function () {
     const items = document.querySelectorAll('.timeline-item');
     const observer = new IntersectionObserver(entries => {
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// --- 2. Dynamiczne pobieranie algorytmów z plików .py ---
+
 async function openEditor(algorithm) {
     const modal = document.getElementById('editorModal');
     const codeArea = document.getElementById('pythonCode');
@@ -43,7 +43,7 @@ function closeEditor() {
     document.getElementById('editorModal').style.display = 'none';
 }
 
-// --- 3. Silnik Pythona w przeglądarce (Skulpt) ---
+// skulpt
 function outf(text) {
     var mypre = document.getElementById("pythonOutput");
     mypre.innerHTML = mypre.innerHTML + text;
