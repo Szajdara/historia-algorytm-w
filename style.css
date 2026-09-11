@@ -1,0 +1,446 @@
+       /* =========================================
+           ZMIENNE CSS - KOLORY
+           ========================================= */
+       :root {
+           --bg-color-dark: #07477a;
+           /* Ciemny niebieski (góra) */
+           --bg-color-light: #00b4d8;
+           /* Jasny niebieski (dół) */
+           --text-color: #ffffff;
+           /* Kolor tekstu */
+           --card-bg: rgba(255, 255, 255, 0.1);
+           /* Półprzezroczyste tło */
+           --card-border: rgba(255, 255, 255, 0.3);
+           /* Ramka */
+           --line-color: rgba(255, 255, 255, 0.5);
+           /* Oś czasu */
+       }
+
+       /* =========================================
+           GŁÓWNE USTAWIENIA STRONY
+           ========================================= */
+       * {
+           box-sizing: border-box;
+           margin: 0;
+           padding: 0;
+       }
+
+       body {
+           font-family: 'Montserrat', sans-serif;
+           background: linear-gradient(to bottom, var(--bg-color-dark), var(--bg-color-light));
+           background-attachment: fixed;
+           color: var(--text-color);
+           min-height: 100vh;
+           padding: 40px 20px;
+       }
+
+       header {
+           text-align: center;
+           margin-bottom: 60px;
+       }
+
+       header h1 {
+           font-size: 3rem;
+           font-weight: 700;
+           margin-bottom: 5px;
+           letter-spacing: -1px;
+       }
+
+       header h2 {
+           font-size: 1.5rem;
+           font-weight: 400;
+           opacity: 0.9;
+       }
+
+       /* =========================================
+           SEKCJA WPROWADZAJĄCA
+           ========================================= */
+       .intro-section {
+           max-width: 900px;
+           margin: 0 auto 60px auto;
+           display: flex;
+           gap: 30px;
+           justify-content: space-between;
+       }
+
+       .intro-box {
+           background: var(--card-bg);
+           border: 1px solid var(--card-border);
+           border-radius: 8px;
+           padding: 20px;
+           flex: 1;
+           backdrop-filter: blur(5px);
+       }
+
+       .intro-box h3 {
+           font-size: 1rem;
+           margin-bottom: 10px;
+           padding-bottom: 5px;
+           border-bottom: 1px solid var(--card-border);
+           text-transform: uppercase;
+           text-align: center;
+       }
+
+       .intro-box p {
+           font-size: 0.9rem;
+           line-height: 1.5;
+           text-align: center;
+       }
+
+       /* =========================================
+           OŚ CZASU (Timeline)
+           ========================================= */
+       .timeline-container {
+           max-width: 900px;
+           margin: 0 auto;
+           position: relative;
+       }
+
+       .timeline-container::before {
+           content: '';
+           position: absolute;
+           right: 40px;
+           top: 0;
+           bottom: 0;
+           width: 2px;
+           background: var(--line-color);
+       }
+
+       .timeline-item {
+           position: relative;
+           margin-bottom: 50px;
+           padding-right: 120px;
+           display: flex;
+           justify-content: flex-end;
+       }
+
+       .timeline-year {
+           position: absolute;
+           right: 0;
+           top: 50%;
+           transform: translateY(-50%);
+           width: 80px;
+           height: 80px;
+           background-color: #fff;
+           color: var(--bg-color-dark);
+           border-radius: 50%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           font-weight: 700;
+           font-size: 1.2rem;
+           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+           z-index: 2;
+       }
+
+       .timeline-year::before {
+           content: '';
+           position: absolute;
+           left: -40px;
+           top: 50%;
+           width: 40px;
+           height: 2px;
+           background: var(--line-color);
+           z-index: 1;
+       }
+
+       .timeline-content {
+           background: var(--card-bg);
+           border: 1px solid var(--card-border);
+           border-radius: 12px;
+           padding: 25px;
+           width: 100%;
+           max-width: 700px;
+           backdrop-filter: blur(5px);
+           position: relative;
+           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+           text-align: center;
+       }
+
+       .timeline-content h3 {
+           font-size: 1.2rem;
+           margin-bottom: 15px;
+           text-transform: uppercase;
+           letter-spacing: 1px;
+           border-bottom: 1px solid var(--card-border);
+           padding-bottom: 10px;
+       }
+
+       .timeline-content p {
+           font-size: 0.95rem;
+           line-height: 1.6;
+           margin-bottom: 20px;
+       }
+
+       .btn-try {
+           display: inline-flex;
+           align-items: center;
+           background: #fff;
+           color: var(--bg-color-dark);
+           text-decoration: none;
+           padding: 8px 20px;
+           border-radius: 4px;
+           font-weight: 600;
+           font-size: 0.9rem;
+           float: right;
+           transition: background 0.3s, transform 0.2s;
+       }
+
+       .btn-try:hover {
+           background: #f0f0f0;
+           transform: scale(1.05);
+       }
+
+       .btn-try span {
+           margin-left: 8px;
+           font-size: 1.2rem;
+       }
+
+       .timeline-content::after {
+           content: "";
+           clear: both;
+           display: table;
+       }
+
+       footer {
+           text-align: center;
+           margin-top: 80px;
+           padding-bottom: 20px;
+           opacity: 0.7;
+       }
+
+       /* =========================================
+           Wersja dla telefonów
+           ========================================= */
+       @media (max-width: 768px) {
+           .intro-section {
+               flex-direction: column;
+           }
+
+           .timeline-container::before {
+               left: 40px;
+               right: auto;
+           }
+
+           .timeline-item {
+               padding-right: 0;
+               padding-left: 100px;
+               justify-content: flex-start;
+           }
+
+           .timeline-year {
+               right: auto;
+               left: 0;
+               width: 60px;
+               height: 60px;
+               font-size: 1rem;
+           }
+
+           .timeline-year::before {
+               left: auto;
+               right: -20px;
+               width: 20px;
+           }
+       }
+
+       /* =========================================
+           NOWE: STYL EDYTORA W3SCHOOLS (MODAL)
+           ========================================= */
+       #editorModal {
+           display: none;
+           /* Domyślnie ukryte */
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background-color: rgba(0, 0, 0, 0.8);
+           z-index: 9999;
+       }
+
+       .editor-container {
+           width: 95%;
+           height: 90%;
+           margin: 2% auto;
+           background-color: #e7e9eb;
+           /* Kolor paska W3Schools */
+           border-radius: 8px;
+           display: flex;
+           flex-direction: column;
+           overflow: hidden;
+           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+       }
+
+       .editor-toolbar {
+           padding: 10px 20px;
+           display: flex;
+           align-items: center;
+           background-color: #e7e9eb;
+           border-bottom: 1px solid #ccc;
+       }
+
+       .run-btn {
+           background-color: #04AA6D;
+           /* Zielony przycisk W3Schools */
+           color: white;
+           border: none;
+           padding: 10px 25px;
+           font-size: 16px;
+           font-weight: bold;
+           border-radius: 4px;
+           cursor: pointer;
+           margin-right: auto;
+       }
+
+       .run-btn:hover {
+           background-color: #059862;
+       }
+
+       .close-btn {
+           background-color: #f44336;
+           color: white;
+           border: none;
+           padding: 10px 20px;
+           font-size: 16px;
+           font-weight: bold;
+           border-radius: 4px;
+           cursor: pointer;
+       }
+
+       .editor-workarea {
+           display: flex;
+           flex: 1;
+           height: calc(100% - 50px);
+       }
+
+       /* Lewa strona - kod */
+       .code-panel {
+           flex: 1;
+           padding: 10px;
+           background-color: #f1f1f1;
+           border-right: 5px solid #e7e9eb;
+       }
+
+       #pythonCode {
+           width: 100%;
+           height: 100%;
+           font-family: Consolas, "Courier New", monospace;
+           font-size: 15px;
+           padding: 15px;
+           border: 1px solid #ccc;
+           resize: none;
+           outline: none;
+       }
+
+       /* Prawa strona - wynik */
+       .output-panel {
+           flex: 1;
+           padding: 10px;
+           background-color: #f1f1f1;
+       }
+
+       #pythonOutput {
+           width: 100%;
+           height: 100%;
+           background-color: #ffffff;
+           font-family: Consolas, "Courier New", monospace;
+           font-size: 15px;
+           padding: 15px;
+           border: 1px solid #ccc;
+           overflow-y: auto;
+           color: #000;
+           white-space: pre-wrap;
+           /* Zawijanie tekstu */
+       }
+
+       /* Konfiguracja kontenera karty */
+       .timeline-content {
+           display: flex;
+           flex-direction: column;
+       }
+
+       /* Wyrównanie nagłówka do środka */
+       .timeline-content h3 {
+           text-align: center;
+           width: 100%;
+       }
+
+       /* Kwadratowy przycisk wyrównany do prawej strony */
+       .button {
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           padding: 12px 20px;
+           background-color: #01A6CC;
+           border: 4px solid #c0dfff;
+           color: white;
+           gap: 10px;
+           border-radius: 8px;
+           /* Zmień na 0, jeśli chcesz idealnie ostre rogi 90° */
+           cursor: pointer;
+           transition: all 0.3s;
+           margin-top: 15px;
+           margin-left: auto;
+           /* Przesunięcie przycisku do prawej krawędzi */
+       }
+
+       .button .text {
+           font-size: 1.1em;
+           font-weight: 700;
+           letter-spacing: 1px;
+       }
+
+       .button .svg {
+           padding-top: 3px;
+           height: 100%;
+           width: fit-content;
+       }
+
+       .button .svg svg {
+           width: 35px;
+           height: 20px;
+       }
+
+       .button:hover {
+           border: 4px solid #b1d8ff;
+           background-color: rgb(42, 118, 226);
+       }
+
+       .button:active {
+           border: 3px solid #c0dfff;
+       }
+
+       .button:hover .svg svg {
+           animation: jello-vertical 0.9s both;
+           transform-origin: left;
+       }
+
+       @keyframes jello-vertical {
+           0% {
+               transform: scale3d(1, 1, 1);
+           }
+
+           30% {
+               transform: scale3d(0.75, 1.25, 1);
+           }
+
+           40% {
+               transform: scale3d(1.25, 0.75, 1);
+           }
+
+           50% {
+               transform: scale3d(0.85, 1.15, 1);
+           }
+
+           65% {
+               transform: scale3d(1.05, 0.95, 1);
+           }
+
+           75% {
+               transform: scale3d(0.95, 1.05, 1);
+           }
+
+           100% {
+               transform: scale3d(1, 1, 1);
+           }
+       }
