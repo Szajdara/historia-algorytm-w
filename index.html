@@ -242,9 +242,10 @@
         <div class="timeline-item">
             <div class="timeline-content">
                 <h3>ALGORYTM BOYERA-MOORE'A</h3>
-                <p>Przeszukuje tekst pod kątem wzorca od prawej do lewej, przeskakując o wiele znaków naraz w przypadku
-                    braku dopasowania. Odpowiada za szybkie wyszukiwanie fraz w edytorach tekstu i narzędziach
-                    systemowych.</p>
+                <p>Algorytm Boyera-Moorea porównuje znaki od prawej do lewej strony wzorca i wykonuje duże
+                    przeskoki w tekście zamiast sprawdzania go znak po znaku. Korzystając z dwóch heurystyk (złegoznaku
+                    i dobrego sufiksu), omija zbędne porównania i osiąga w najlepszym wypadku podliniową złożoność
+                    $O(n/m).</p>
                 <button class="button" onclick="openEditor('boyer_moore')">
                     <span class="text">Wypróbuj</span>
                     <span class="svg">
@@ -262,8 +263,10 @@
         <div class="timeline-item">
             <div class="timeline-content">
                 <h3>ALGORYTM CART (DRZEWA DECYZYJNE)</h3>
-                <p>Buduje drzewa klasyfikacyjne poprzez cykliczny podział danych na podstawie serii pytań o ich cechy.
-                    Stanowi fundament analityki predykcyjnej i uczenia maszynowego (np. Random Forest, XGBoost).</p>
+                <p>Drzewo decyzyjne CART działa poprzez rekurencyjny podział danych na mniejsze grupy za pomocą pytań
+                    typu „tak/nie”. W każdym kroku wybiera cechę i próg, które najlepiej porządkują dane (minimalizując
+                    tzw. nieczystość Gini'ego), i tworzy gałęzie. Proces ten powtarza się od korzenia aż do liści, które
+                    wyznaczają ostateczną decyzję.</p>
                 <button class="button" onclick="openEditor('cart')">
                     <span class="text">Wypróbuj</span>
                     <span class="svg">
