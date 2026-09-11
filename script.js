@@ -1,5 +1,5 @@
-
 document.addEventListener("DOMContentLoaded", function () {
+    // Animacja Timeline Items
     const items = document.querySelectorAll('.timeline-item');
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -15,9 +15,84 @@ document.addEventListener("DOMContentLoaded", function () {
         item.style.transition = 'all 0.6s ease-out';
         observer.observe(item);
     });
+
+    // animation stuck
+    const canvas = document.getElementById("confetti");
+    if (canvas) {
+        const ctx = canvas.getContext("2d");
+
+        const COLORS = [
+            [238, 96, 169],
+            [68, 213, 217],
+            [245, 187, 152],
+            [144, 148, 188],
+            [235, 234, 77]
+        ];
+
+        let W = window.innerWidth;
+        let H = window.innerHeight;
+        canvas.width = W;
+        canvas.height = H;
+
+        window.addEventListener('resize', function() {
+            W = window.innerWidth;
+            H = window.innerHeight;
+            canvas.width = W;
+            canvas.height = H;
+        });
+
+        const mp = 80;
+        const particles = [];
+
+        for (let i = 0; i < mp; i++) {
+            particles.push({
+                x: Math.random() * W,
+                y: Math.random() * H,
+                fontSize: Math.floor(Math.random() * 10 + 12),
+                speed: Math.random() * 2 + 1,         
+                digit: Math.floor(Math.random() * 10).toString(), 
+                color: COLORS[Math.floor(Math.random() * COLORS.length)]
+            });
+        }
+
+        function drawDigits() {
+            ctx.clearRect(0, 0, W, H);
+
+            for (let i = 0; i < mp; i++) {
+                const p = particles[i];
+
+                ctx.fillStyle = "rgba(" + p.color.join(",") + ", 0.8)";
+                ctx.font = `${p.fontSize}px 'Montserrat', monospace`;
+                ctx.fillText(p.digit, p.x, p.y);
+            }
+
+            update();
+        }
+
+        function update() {
+            for (let i = 0; i < mp; i++) {
+                const p = particles[i];
+                
+                p.y += p.speed;
+
+                if (p.y > H + 20) {
+                    particles[i] = {
+                        x: Math.random() * W,
+                        y: -10,
+                        fontSize: Math.floor(Math.random() * 10 + 12),
+                        speed: Math.random() * 2 + 1,
+                        digit: Math.floor(Math.random() * 10).toString(),
+                        color: COLORS[Math.floor(Math.random() * COLORS.length)]
+                    };
+                }
+            }
+        }
+
+        setInterval(drawDigits, 33);
+    }
 });
 
-
+//Skulpt
 async function openEditor(algorithm) {
     const modal = document.getElementById('editorModal');
     const codeArea = document.getElementById('pythonCode');
@@ -43,7 +118,6 @@ function closeEditor() {
     document.getElementById('editorModal').style.display = 'none';
 }
 
-// skulpt
 function outf(text) {
     var mypre = document.getElementById("pythonOutput");
     mypre.innerHTML = mypre.innerHTML + text;
