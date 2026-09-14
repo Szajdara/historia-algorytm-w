@@ -22,8 +22,6 @@ def quick_sort_inplace(arr, low=0, high=None):
 
     return arr
 
-
-# Test
 dane = [29, 10, 14, 37, 13, 9, 21]
 print("Przed:", dane)
 quick_sort_inplace(dane)

@@ -1,9 +1,9 @@
 def simplex_dydaktyczny():
     # Tablica Simplex dla problemu:
-    # Max Z = 3x + 5y  -->  Z - 3x - 5y = 0
-    # 1) 1x + 0y + s1           = 4
-    # 2) 0x + 2y      + s2      = 12
-    # 3) 3x + 2y           + s3 = 18
+    # Max Z = 3x + 5y --> Z - 3x - 5y = 0
+    # 1) 1x + 0y + s1 = 4
+    # 2) 0x + 2y + s2 = 12
+    # 3) 3x + 2y + s3 = 18
     # Macierz: [x, y, s1, s2, s3, RHS]
     tablica = [
         [1.0, 0.0, 1.0, 0.0, 0.0,  4.0],

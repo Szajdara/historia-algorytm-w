@@ -11,6 +11,5 @@ def newton_sqrt(n, tol=1e-10):
             return next_x
         x = next_x
 
-# Test
 liczba = 25
 print(f"Pierwiastek z {liczba}: {newton_sqrt(liczba)}")

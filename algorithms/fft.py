@@ -29,11 +29,9 @@ def dft(sygnal):
         
     return wyniki
 
-
 sygnal = [1, 2, 1, -1]
 widmo = dft(sygnal)
 
-print("=== WYNIKI DYSKRETNEJ TRANSFORMACJI FOURIERA ===")
 print("k | Część Re | Część Im | Sila (Amplituda) | Wykres mocy")
 print("-" * 55)
 

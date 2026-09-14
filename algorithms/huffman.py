@@ -31,7 +31,6 @@ def kodowanie_huffmana(tekst):
     # Zwracamy słownik dla łatwiejszego odczytu {znak: kod}
     return dict(wezly[0][1:])
 
-# --- Test ---
 tekst = "algorytmy"
 kody = kodowanie_huffmana(tekst)
 

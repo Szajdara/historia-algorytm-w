@@ -33,7 +33,6 @@ def inorder(korzen, wynik=None):
         inorder(korzen.prawy, wynik)
     return wynik
 
-# --- Test ---
 root = None
 elementy = [20, 10, 30, 5, 15]
 for x in elementy:

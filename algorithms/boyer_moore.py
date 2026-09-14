@@ -18,8 +18,6 @@ def boyer_moore(tekst, wzorzec):
 
     return -1
 
-
-# Przykład
 tekst = "PROGRAMOWANIE ALGORYTMOW"
 wzorzec = "RYM"
 print("Indeks:", boyer_moore(tekst, wzorzec))

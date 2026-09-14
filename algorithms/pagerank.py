@@ -22,9 +22,9 @@ def pagerank(graf_linkow, d=0.85, iteracje=3):
 # Graf: row = z kogo wychodzi, col = do kogo idzie
 # A -> B, C | B -> C | C -> A, B
 graf = [
-    [0, 1, 1],  # Strona A
-    [0, 0, 1],  # Strona B
-    [1, 1, 0]   # Strona C
+    [0, 1, 1], # Strona A
+    [0, 0, 1], # Strona B
+    [1, 1, 0]  # Strona C
 ]
 
 pagerank(graf)
